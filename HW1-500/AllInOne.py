@@ -114,6 +114,7 @@ class patient(object):
     def recieveFromUsers(self, data):
         patient = [i for i in data]
         patient_id = patient[0]
+        self.patientID = patient_id
         self.name = data[patient_id]["name"]
         self.gender = data[patient_id]["gender"]
         self.age = data[patient_id]["age"]
@@ -148,6 +149,9 @@ for line in fileContent:
                               'gender': line[2],
                               'age': line[3]}
             # AlertCheck(data1)
+            patient_1 = patient()
+            patient_1.recieveFromUsers(data1)
+            patient_1.send_select_to_UI()
 
         elif len(line) == 8:
             lower2, upper2 = line[2].split("-")
@@ -165,7 +169,6 @@ for line in fileContent:
             patient_1 = patient()
             patient_1.recieveFromAlert(alertData)
             patient_1.send_alert_to_UI()
-
 
     else:
         print(ErrorCheck(line)[1])
