@@ -1,0 +1,5 @@
+We assume that we have all three sensors( Pulse, Blood Pressure, Blood Oxygen) which provide numbers with fixed unit (Pulse: /min, Blood Pressure: mmHg, Blood Oxygen: %) to the input in order every min.
+We also want to have the patient name and ID in our input given by the doctor at the beginning.
+All possible errors will be handled after the input being given every min. For example: if one of our sensors is broken which provides nothing or mojibake, our input will find it out and provide corresond information as output.
+If everything works fine, our output will be the following format: Python list which will be saved to the txt file or jasn file
+[ ('Pulse', Float), ('Blood Pressure', Float), ('Blood Ox', Float), 'time being recieved', 'Patient name', ID ] 
