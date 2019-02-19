@@ -50,7 +50,7 @@ def GenerateInput():
             inputQueue.put(inputContent)
             justAdd = False
             time.sleep(random.choice(range(1,9)))
-        elif justAdd == True:
+        elif justAdd:
             pulse = random.choice(range(300))
             pulseRange = "50-120"
             bloodPressure = random.choice(range(100))
