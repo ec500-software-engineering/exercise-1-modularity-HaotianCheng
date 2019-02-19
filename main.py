@@ -108,21 +108,13 @@ def ErrorCheck(input_List):
         return p, error
 
 
-def SaveAlertData(alert_message, p_id):
-    alert_dict = {"alert_message": alert_message, "patient_id": p_id}
-    alert_json = json.dumps(alert_dict)
-    # print(alert_json)
-    # call_storage_module(alert_json)
-
-
 def SendToUI(msg, data):
     patient = [i for i in data]
     patient_id = patient[0]
     ui_dict = {"ID": patient_id, "alert_message": msg, "pulse": data[patient_id]["pulse"],
                "bloodPressure": data[patient_id]["bloodPressure"],
                "bloodOx": data[patient_id]["bloodOx"]}
-    ui_json = json.dumps(ui_dict)
-    # print(ui_json)
+    
     return ui_dict
     # call_output_method
 
