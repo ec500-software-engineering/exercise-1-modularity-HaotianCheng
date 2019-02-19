@@ -42,7 +42,7 @@ class storage:
 		patient_dict['bloodPressure'] = sensor_data[patientId]["bloodPressure"]
 		patient_dict['bloodOx'] =  sensor_data[patientId]["bloodOx"]
 		patient_dict['pulse'] = sensor_data[patientId]["pulse"]
-		insert = self.mycol.insert_one(patient_dict)
+		# insert = self.mycol.insert_one(patient_dict)
 
 		if Debug:
 			print("-------------------")
