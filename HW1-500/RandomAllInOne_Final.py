@@ -140,8 +140,7 @@ def AlertCheck(data):
         alert_message += "Oxygen is Too low, "
     elif float(data[patient_id]["bloodOx"]) > float(data[patient_id]["oxRange"]["upper"]):
         alert_message += "Oxygen is Too high, "
-    if alert_message != "":
-        SaveAlertData(alert_message, data[patient_id])
+    
     alert = SendToUI(alert_message, data)
     return alert
 
